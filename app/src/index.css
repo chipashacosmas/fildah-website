@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --sage: #5a7d5a;
+    --sage-light: #e8f0e8;
+    --cream: #faf9f6;
+    --cream-dark: #f0efe8;
+    --forest: #3d5c3d;
+    --brown: #5c4a3d;
+    --brown-light: #8a7a6a;
+    --sand: #d4c8b8;
+
+    --background: 60 20% 98%;
+    --foreground: 90 15% 25%;
+    --card: 60 15% 96%;
+    --card-foreground: 90 15% 25%;
+    --popover: 60 20% 98%;
+    --popover-foreground: 90 15% 25%;
+    --primary: 120 16% 42%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 60 15% 92%;
+    --secondary-foreground: 90 15% 25%;
+    --muted: 60 10% 88%;
+    --muted-foreground: 30 10% 55%;
+    --accent: 120 16% 42%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 40 15% 85%;
+    --input: 40 15% 85%;
+    --ring: 120 16% 42%;
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--cream);
+    color: var(--brown);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: var(--sage);
+    color: white;
+  }
+}
+
+@layer components {
+  .container-simple {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .btn-sage {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--sage);
+    color: white;
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding: 0.75rem 1.75rem;
+    border-radius: 2rem;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-sage:hover {
+    background-color: var(--forest);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(90, 125, 90, 0.25);
+  }
+
+  .btn-outline-sage {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: var(--sage);
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding: 0.75rem 1.75rem;
+    border-radius: 2rem;
+    border: 1.5px solid var(--sage);
+    transition: all 0.25s ease;
+    cursor: pointer;
+  }
+
+  .btn-outline-sage:hover {
+    background-color: var(--sage);
+    color: white;
+  }
+
+  .card-simple {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    border: 1px solid var(--sand);
+    transition: all 0.25s ease;
+  }
+
+  .card-simple:hover {
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    transform: translateY(-3px);
+  }
+
+  .input-simple {
+    width: 100%;
+    background: white;
+    border: 1.5px solid var(--sand);
+    border-radius: 0.75rem;
+    padding: 0.875rem 1rem;
+    font-size: 0.875rem;
+    color: var(--brown);
+    transition: all 0.2s ease;
+  }
+
+  .input-simple:focus {
+    outline: none;
+    border-color: var(--sage);
+    box-shadow: 0 0 0 3px rgba(90, 125, 90, 0.1);
+  }
+
+  .input-simple::placeholder {
+    color: var(--brown-light);
+  }
+
+  .nav-link-simple {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--brown-light);
+    padding: 0.5rem 0;
+    transition: color 0.2s ease;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-link-simple:hover {
+    color: var(--sage);
+  }
+
+  .nav-link-simple.active {
+    color: var(--sage);
+    font-weight: 600;
+  }
+
+  .badge-simple {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--sage-light);
+    color: var(--sage);
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.35rem 0.85rem;
+    border-radius: 2rem;
+    letter-spacing: 0.03em;
+  }
+}
